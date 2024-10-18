@@ -1,9 +1,17 @@
 import logging
 import datetime
+
+from dotenv import load_dotenv
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 
+
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
+enginee = create_engine(DATABASE_URL)
+Session = sessionmaker(bind=enginee)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class TimeService:
     def __init__(self, time, session_factory):

@@ -16,7 +16,7 @@ class Time(Base):
     lunch_exit_time = Column(DateTime, nullable=True)  # Stores the datetime for lunch exit
     exit_time = Column(DateTime, nullable=True)  # Stores the datetime of exit
 
-    # Corrected __init__ method
+    
     def __init__(self, date: datetime.date, entry_time: datetime.datetime = None, 
                  lunch_entry_time: datetime.datetime = None, lunch_exit_time: datetime.datetime = None, 
                  exit_time: datetime.datetime = None):
