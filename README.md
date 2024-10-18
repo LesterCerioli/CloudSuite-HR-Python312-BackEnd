@@ -68,4 +68,70 @@ Request Body:
 }
 ```
 
+Response:
+```json
+{
+  "id": "uuid-value",
+  "date": "2024-10-15",
+  "entry_time": "2024-10-15T09:00:00",
+  "lunch_entry_time": "2024-10-15T12:00:00",
+  "lunch_exit_time": "2024-10-15T13:00:00",
+  "exit_time": "2024-10-15T17:00:00"
+}
+```
+
+## 2. Get Time Entries by Date
+### GET /times/{target_date}
+Response
+```json
+[
+  {
+    "id": "uuid-value",
+    "date": "2024-10-15",
+    "entry_time": "2024-10-15T09:00:00",
+    "lunch_entry_time": "2024-10-15T12:00:00",
+    "lunch_exit_time": "2024-10-15T13:00:00",
+    "exit_time": "2024-10-15T17:00:00"
+  }
+]
+```
+
+## 3. Get Time Entries on or after a Date
+### GET /times/get/{target_date}
+Response
+```json
+[
+  {
+    "id": "uuid-value",
+    "date": "2024-10-15",
+    "entry_time": "2024-10-15T09:00:00",
+    "lunch_entry_time": "2024-10-15T12:00:00",
+    "lunch_exit_time": "2024-10-15T13:00:00",
+    "exit_time": "2024-10-15T17:00:00"
+  },
+  {
+    "id": "another-uuid-value",
+    "date": "2024-10-16",
+    "entry_time": "2024-10-16T09:00:00",
+    "lunch_entry_time": "2024-10-16T12:00:00",
+    "lunch_exit_time": "2024-10-16T13:00:00",
+    "exit_time": "2024-10-16T17:00:00"
+  }
+]
+```
+## Database Configuration
+This project uses PostgreSQL as the database. The connection URL is specified in the .env file as:
+```bash
+DATABASE_URL=postgresql://<DB_USER>:<DB_PASSWORD>@<DB_HOST>:<DB_PORT>/<DB_NAME>
+```
+
+## Testing
+You can run the test suite using pytest:
+```bash
+pytest
+```
+
+
+
+
 
