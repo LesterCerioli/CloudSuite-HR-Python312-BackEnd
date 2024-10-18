@@ -24,5 +24,5 @@ Before running the application, ensure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/LesterCerioli/time-tracking-api.git
+git clone https://github.com/LesterCerioli/CloudSuite-HR-Python312-BackEnd.git
 cd time-tracking-api
